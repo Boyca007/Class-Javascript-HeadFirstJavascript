@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Page</title>
+        <meta charset="utf-8">
+        <script>
+            
+
+            String.prototype.palindrome = function() {
+                var len = this.length-1;
+                for  (var i = 0; i <= len; i++) {
+                    if (this.charAt(i) !== this.charAt(len-i)) {
+                        return false;
+                    }
+                }
+                return true;
+            };
+
+
+            words = ["space", "books", "racecar", "level", "oliver"];
+
+            for (var i = 0; i < words.length; i++) {
+                if(words[i].palindrome()){
+                    console.log(words[i] + " is a palendrome");
+                } else {
+                    console.log(words[i] + " is NOT a palendrome");
+                }
+            }
+
+        </script>
+    </head>
+    <body></body>
+</html>
+

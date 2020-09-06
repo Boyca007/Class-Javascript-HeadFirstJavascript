@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Prequalifcation</title>
+        <meta charset="utf-8">
+        <script>
+            if (99 == "99") {
+                console.log("A number equals a string!");
+            } else {
+                console.log("No way a number equals a string");
+            }
+
+            var phonenumber = "123-4567";
+
+            function test(phone) {
+                var last = phone.substring(4);
+                console.log(isNaN(last));
+                console.log(typeof(last));
+            }
+
+            test(phonenumber);
+        </script>
+    </head>
+    <body></body>
+</html>
+

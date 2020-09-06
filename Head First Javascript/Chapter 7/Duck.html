@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Prequalifcation</title>
+        <meta charset="utf-8">
+        <script>
+            function Duck(sound) {
+                this.sound = sound;
+                this.quack = function() {console.log(this.sound)}
+            }
+
+            var toy = new Duck("quack quack");
+
+            toy.quack();
+
+            console.log(typeof toy);
+            console.log(toy instanceof Duck);
+
+            console.log(typeof Infinity);
+            console.log(typeof null); 
+        </script>
+    </head>
+    <body></body>
+</html>
+

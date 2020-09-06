@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Page</title>
+        <meta charset="utf-8">
+        <script>
+            /* -------Original-------
+            window.onload = init; 
+            var cookies = {
+                instruction: "Preheat oven to 350...",
+                //anonymous function!
+                bake: function(time) {
+                    console.log("Baking the cookies.");
+                    setTimeout(done, time);
+                }
+            }
+            function init() {
+                var button = document.getElementById("bake");
+                button.onclick = handleButton;
+            }
+            function handleButton() {
+                console.log("Time to bake the cookies!");
+                cookies.bake(2500);
+            }
+            function done() {
+                alert("Cookies are ready, take them out to cool.");
+                console.log("Cooling the cookies.");
+                //anonymous function!
+                var cool = function() {
+                    alert("Cookies are cool, time to eat!");
+                }
+                setTimeout(cool, 1000);
+            }*/
+
+            window.onload = function() {
+                var button = document.getElementById("bake");
+                button.onclick = function() {
+                    console.log("Time to bake the cookies!");
+                    cookies.bake(2500);
+                };
+            };
+            var cookies = {
+                instruction: "Preheat oven to 350...",
+                bake: function(time) {
+                    console.log("Baking the cookies.");
+                    setTimeout(done, time);
+                }
+            }
+            function done() {
+                alert("Cookies are ready, take them out to cool.");
+                console.log("Cooling the cookies.");
+                var cool = setTimeout(function() {
+                    alert("Cookies are cool, time to eat!");
+                }, 1000);
+            }
+
+        </script>
+    </head>
+    <body></body>
+</html>
+

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Page</title>
+        <meta charset="utf-8">
+        <script>
+            //Question 1
+
+            //passwordGuess is local because it's a parameter = our free variable
+            function makePassword(password) {
+                return function guess(passwordGuess) {
+                    return (passwordGuess === password);
+                };
+            }
+
+            var tryGuess = makePassword("Secret");
+            console.log("Guessing 'nope': " + tryGuess("nope"));
+            console.log("Guessing 'nope': " + tryGuess("Secret"));
+
+            //Question 2
+
+            //this is a closure because we're using x as our free variable (parameter = local var)
+            //I've defined that n = 10 once and it's saved as a "global"-ish because of the environment
+            function multN(n) {
+                return function (x) {
+                    return n * x;
+                };
+            }
+
+            var mult10 = multN(10);
+            console.log(mult10(2));
+            console.log(mult10(5));
+
+            //Question 3
+
+            function makeCounter() {
+                var counter = 0;
+                return {
+                    increment: function() {
+                    counter = counter + 1;
+                    return counter;
+                    }
+                };
+            }
+
+            var doCount = makeCounter();
+            console.log(doCount.increment());
+            console.log(doCount.increment());
+            console.log(doCount.increment());
+
+
+        </script>
+    </head>
+    <body></body>
+</html>
+

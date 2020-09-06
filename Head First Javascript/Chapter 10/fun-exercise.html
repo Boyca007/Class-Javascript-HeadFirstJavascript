@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Prequalifcation</title>
+        <meta charset="utf-8">
+        <script>
+
+            function fun(echo) {
+                console.log(echo);
+            }
+
+            fun("hello") //prints hello to the console
+
+            function boo(aFunction) {
+                aFunction("boo");
+            }
+
+            boo(fun); //you're calling the boo function, which calls 
+                //the fun function with "boo"
+                //so it prints "boo" to the console
+
+            console.log(fun); //this would print the function code for fun
+
+            fun(boo); //this would print the function code for boo
+
+            var moreFun = fun;
+
+            moreFun("hello again"); //prints "hello again" to the console
+
+            function echoMaker() { 
+                return fun;
+            }
+
+            var bigFun = echoMaker();   //assigns the fun function reference to the variable
+            bigFun("is there an echo?") //prints "is there an echo" to the console
+
+        </script>
+    </head>
+    <body></body>
+</html>
+
